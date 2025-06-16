@@ -39,7 +39,7 @@ function App() {
       <Router>
         {" "}
         {/* Now using HashRouter */}
-        <Navbar title="Covert Case" aboutText="About Us" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="Covert Cases" aboutText="About Us" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container pb-5">
           <Routes>
