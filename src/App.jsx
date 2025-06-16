@@ -1,10 +1,10 @@
 import { useState } from "react"
+import { HashRouter as Router, Routes, Route } from "react-router-dom" // ⬅ Change to HashRouter
 import "./App.css"
 import About from "./components/About"
 import Navbar from "./components/Navbar"
 import TextForm from "./components/TextForm"
 import Alert from "./components/Alert"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -33,15 +33,18 @@ function App() {
       document.title = "Text Play - Light Mode is on"
     }
   }
+
   return (
     <>
       <Router>
-        <Navbar title="React Practice" aboutText="About Us" mode={mode} toggleMode={toggleMode} />
+        {" "}
+        {/* Now using HashRouter */}
+        <Navbar title="Covert Case" aboutText="About Us" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container pb-5">
           <Routes>
-            <Route exact path="/about" element={<About mode={mode} />}></Route>
-            <Route exact path="/" element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />}></Route>
+            <Route exact path="/about" element={<About mode={mode} />} />
+            <Route exact path="/" element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />} />
           </Routes>
         </div>
       </Router>
