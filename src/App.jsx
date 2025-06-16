@@ -5,6 +5,7 @@ import About from "./components/About"
 import Navbar from "./components/Navbar"
 import TextForm from "./components/TextForm"
 import Alert from "./components/Alert"
+import PasswordGen from "./components/PasswordGen"
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -44,6 +45,7 @@ function App() {
         <div className="container pb-5">
           <Routes>
             <Route exact path="/about" element={<About mode={mode} />} />
+            <Route exact path="/password-gen" element={<PasswordGen mode={mode} />} />
             <Route exact path="/" element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />} />
           </Routes>
         </div>
